@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@android:drawable/ic_menu_myplaces"
+        android:title="home" />
+
+    <item
+        android:id="@+id/navigation_schedule"
+        android:icon="@android:drawable/ic_menu_month"
+        android:title="schedule" />
+
+    <item
+        android:id="@+id/navigation_notification"
+        android:icon="@android:drawable/ic_popup_reminder"
+        android:title="notification" />
+
+</menu>

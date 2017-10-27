@@ -1,0 +1,23 @@
+<resources>
+    <!-- 앱 이름 정의 부분-->
+    <string name="app_name">아맞다-시연</string>
+
+    <string name="main_main">오늘의 수업</string>
+    <string name="schedule_lectureType">일반강의</string>
+    <string name="schedule_professor">강의 교수</string>
+    <string name="schedule_schedule">시간표</string>
+    <string name="search_search">출결 조회</string>
+    <string name="search_date">날짜</string>
+    <string name="search_lectureNmae">강의명</string>
+    <string name="search_attendance">출석</string>
+    <string name="search_state">상태</string>
+    <string name="itemcheck_time">없음</string>
+    <string name="notification">공지사항</string>
+
+
+
+
+
+
+
+</resources>

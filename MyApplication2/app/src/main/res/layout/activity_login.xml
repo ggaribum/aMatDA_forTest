@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="225dp"
+            android:orientation="vertical"
+            android:weightSum="1">
+
+
+        </FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edt_id"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:hint="studentNumber"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:textStyle="bold"
+
+                android:layout_marginTop="50dp"
+                android:background="@color/colorPrimary"
+                />
+            <EditText
+                android:inputType="textPassword"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:hint="password"
+                android:layout_gravity="center"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:textColorHint="#ffffff"
+                android:id="@+id/edt_pw"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:background="@color/colorPrimary"
+                />
+
+            <Button
+                android:id="@+id/btn_login"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+
+                android:text="login"
+                android:textColor="#ffffff"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>
