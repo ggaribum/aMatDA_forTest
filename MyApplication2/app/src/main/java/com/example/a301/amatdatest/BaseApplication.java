@@ -2,8 +2,14 @@ package com.example.a301.amatdatest;
 
 import android.app.ActivityManager;
 import android.app.Application;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Context;
+import android.content.Intent;
 import android.media.AudioManager;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.util.Log;
 
 import com.estimote.sdk.Beacon;
@@ -56,6 +62,7 @@ public class BaseApplication extends Application {
             Context context = getApplicationContext();
             AudioManager mAudioManager = (AudioManager) context.getSystemService(Context.AUDIO_SERVICE);
 
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onEnteredRegion(Region region, List<Beacon> list) {
                 // 110 120 비콘이 잡히면
@@ -64,7 +71,7 @@ public class BaseApplication extends Application {
                 if(!list.isEmpty()) {
                     Log.v("TestING","리스트");
                     Beacon beacon = list.get(0);
-                    if(beacon.getRssi()>-93){ // 93-0
+                    if(beacon.getRssi()>-58){ // 93-0
                         if(!isAlreadyRunActivity())
                         {
                             /*//앱 실행중이 아닐때
@@ -75,8 +82,7 @@ public class BaseApplication extends Application {
                             showNotification("M4M", "매너 있게 변경되었습니다");*/
                         }
                         else {
-                            //앱 실행중 일때
-                    //        showNotification("M4M", "매너 있게 변경되었습니다");
+                            showNotification("아맞다","C 프로그래밍 및 실습 출석 완료. 매너있게 변경되었습니다.");
                         }
                     }
                     else{ //94-110
@@ -92,23 +98,13 @@ public class BaseApplication extends Application {
             }
             @Override
             public void onExitedRegion(Region region) {
-                if(soundSet==0)
-                {
-                    mAudioManager.setRingerMode(AudioManager.RINGER_MODE_SILENT);
-                }
-                else if(soundSet==1)
-                {
-                    mAudioManager.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
-                }
-                else if(soundSet==2)
-                {
-                    mAudioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
-                }
-               // showNotification("M4M","매너를 위해 대기 중입니다");
+
+
             }
         });
     }
- /*   public void showNotification(String title, String message){
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+    public void showNotification(String title, String message){
         Intent notifyIntent = new Intent(this, MainActivity.class);
 
         notifyIntent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -129,7 +125,7 @@ public class BaseApplication extends Application {
 
         NotificationManager notificationManager=(NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(1,notification);
-    }*/
+    }
     private boolean isAlreadyRunActivity()
     {
         ActivityManager activity_manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
